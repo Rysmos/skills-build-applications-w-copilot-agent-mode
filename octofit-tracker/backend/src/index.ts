@@ -272,10 +272,4 @@ app.post(['/api/workouts', '/api/workouts/'], async (request, response) => {
   response.status(201).json(await WorkoutModel.create(newWorkout));
 });
 
-if (process.env.NODE_ENV !== 'test') {
-  app.listen(port, () => {
-    console.log(`OctoFit API listening on port ${port}`);
-  });
-}
-
 export { app };
