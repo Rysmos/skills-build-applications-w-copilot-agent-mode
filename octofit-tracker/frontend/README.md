@@ -1,4 +1,24 @@
-# React + Vite
+# Octofit Tracker presentation tier
+
+Run the frontend with `npm run dev` from this directory. The API base URL is built from `VITE_CODESPACE_NAME` when it is available:
+
+```text
+https://${VITE_CODESPACE_NAME}-8000.app.github.dev/api
+```
+
+Define `VITE_CODESPACE_NAME` in `.env.local` for Codespaces, for example:
+
+```env
+VITE_CODESPACE_NAME=your-codespace-name
+```
+
+When the variable is unset, the app safely falls back to `http://localhost:8000/api`.
+
+## Development
+
+The app uses React Router for navigation and supports array responses as well as paginated API payloads with `items`, `data`, or `results` properties.
+
+## Vite reference
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
