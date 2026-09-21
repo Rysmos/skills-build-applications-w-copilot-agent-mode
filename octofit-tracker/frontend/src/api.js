@@ -9,8 +9,12 @@ export function getItems(payload) {
   return payload?.items ?? payload?.data ?? payload?.results ?? []
 }
 
-export async function fetchCollection(resource) {
-  const response = await fetch(`${apiBaseUrl}/${resource}/`)
-  if (!response.ok) throw new Error(`Unable to load ${resource} (${response.status})`)
+export async function fetchEndpoint(endpoint) {
+  const response = await fetch(endpoint)
+  if (!response.ok) throw new Error(`Unable to load API data (${response.status})`)
   return getItems(await response.json())
+}
+
+export async function fetchCollection(resource) {
+  return fetchEndpoint(`${apiBaseUrl}/${resource}/`)
 }
