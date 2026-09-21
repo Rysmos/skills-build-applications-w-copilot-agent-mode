@@ -42,7 +42,7 @@ type LeaderboardEntry = {
   streak: number;
 };
 
-type Workout = {
+type Workout =  {
   id: number;
   title: string;
   focus: string;
